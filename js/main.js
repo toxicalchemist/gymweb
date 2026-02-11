@@ -1,4 +1,4 @@
-// Main JavaScript for FitZone Gym
+// Main JavaScript for Prime Opus Gym
 
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
