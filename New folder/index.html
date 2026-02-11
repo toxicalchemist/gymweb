@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitZone Gym - Simula ng Iyong Fitness Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-gray-900 text-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-dumbbell text-red-500 text-xl md:text-2xl"></i>
+                    <span class="text-xl md:text-2xl font-bold">FitZone</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-red-500 transition">Home</a>
+                    <a href="packages.html" class="hover:text-red-500 transition">Packages</a>
+                    <a href="workout-planner.html" class="hover:text-red-500 transition">Workout Planner</a>
+                    <a href="instructors.html" class="hover:text-red-500 transition">Instructors</a>
+                    <a href="payment.html" class="hover:text-red-500 transition">Payment</a>
+                </div>
+                <div class="flex space-x-2 md:space-x-4">
+                    <a href="login.html" class="bg-red-500 hover:bg-red-600 px-3 md:px-4 py-2 rounded transition text-sm md:text-base">Login</a>
+                    <a href="register.html" class="bg-gray-700 hover:bg-gray-800 px-3 md:px-4 py-2 rounded transition hidden sm:block text-sm md:text-base">Sign Up</a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-800">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block py-2 hover:text-red-500">Home</a>
+                <a href="packages.html" class="block py-2 hover:text-red-500">Packages</a>
+                <a href="workout-planner.html" class="block py-2 hover:text-red-500">Workout Planner</a>
+                <a href="instructors.html" class="block py-2 hover:text-red-500">Instructors</a>
+                <a href="payment.html" class="block py-2 hover:text-red-500">Payment</a>
+                <a href="register.html" class="block py-2 hover:text-red-500 sm:hidden">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 bg-gradient-to-br from-gray-900 via-gray-800 to-red-900 text-white">
+        <div class="container mx-auto px-4 py-24">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Transform Your Body, Transform Your Life</h1>
+                    <p class="text-lg md:text-xl mb-8 text-gray-300">Join FitZone Philippines and start your fitness journey with expert trainers, premium equipment, and personalized workout plans.</p>
+                    <div class="flex space-x-4">
+                        <a href="packages.html" class="bg-red-500 hover:bg-red-600 px-8 py-3 rounded-lg text-lg font-semibold transition">Get Started</a>
+                        <a href="#features" class="border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-lg text-lg font-semibold transition">Learn More</a>
+                    </div>
+                </div>
+                <div class="hidden lg:block">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop" alt="Gym" class="rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose FitZone?</h2>
+                <p class="text-gray-600 text-base md:text-lg">We provide everything you need to achieve your fitness goals</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-gray-50 rounded-lg hover:shadow-xl transition">
+                    <div class="bg-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-dumbbell text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Premium Equipment</h3>
+                    <p class="text-gray-600">State-of-the-art gym equipment for all your training needs</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg hover:shadow-xl transition">
+                    <div class="bg-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-friends text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Expert Trainers</h3>
+                    <p class="text-gray-600">Certified professionals to guide your fitness journey</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg hover:shadow-xl transition">
+                    <div class="bg-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-calendar-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Flexible Schedule</h3>
+                    <p class="text-gray-600">24/7 access to fit your busy lifestyle</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg hover:shadow-xl transition">
+                    <div class="bg-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Nutrition Guidance</h3>
+                    <p class="text-gray-600">Personalized meal plans to complement your workouts</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg hover:shadow-xl transition">
+                    <div class="bg-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Group Classes</h3>
+                    <p class="text-gray-600">Dynamic group sessions for motivation and fun</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg hover:shadow-xl transition">
+                    <div class="bg-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-medal text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Track Progress</h3>
+                    <p class="text-gray-600">Monitor your achievements and stay motivated</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+   
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-red-500 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4">Ready to Start Your Fitness Journey?</h2>
+            <p class="text-xl mb-8">Join thousands of members who have transformed their lives</p>
+            <a href="packages.html" class="bg-white text-red-500 hover:bg-gray-100 px-8 py-3 rounded-lg text-lg font-semibold inline-block transition">View Our Packages</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2026 FitZone Gym. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>                    

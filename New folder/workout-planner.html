@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Planner - FitZone Gym</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-gray-900 text-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i class="fas fa-dumbbell text-red-500 text-2xl"></i>
+                    <span class="text-2xl font-bold">FitZone</span>
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-red-500 transition">Home</a>
+                    <a href="packages.html" class="hover:text-red-500 transition">Packages</a>
+                    <a href="workout-planner.html" class="text-red-500">Workout Planner</a>
+                    <a href="instructors.html" class="hover:text-red-500 transition">Instructors</a>
+                    <a href="payment.html" class="hover:text-red-500 transition">Payment</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="login.html" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded transition">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-br from-gray-900 to-red-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Weekly Workout Planner</h1>
+            <p class="text-lg md:text-xl text-gray-300">Plan and track your fitness journey week by week</p>
+        </div>
+    </section>
+
+    <!-- Workout Categories -->
+    <section class="py-8 bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-3">
+                <button class="workout-category active" data-category="all">
+                    <i class="fas fa-th-large mr-2"></i> All Workouts
+                </button>
+                <button class="workout-category" data-category="strength">
+                    <i class="fas fa-dumbbell mr-2"></i> Strength
+                </button>
+                <button class="workout-category" data-category="cardio">
+                    <i class="fas fa-running mr-2"></i> Cardio
+                </button>
+                <button class="workout-category" data-category="flexibility">
+                    <i class="fas fa-spa mr-2"></i> Flexibility
+                </button>
+                <button class="workout-category" data-category="sports">
+                    <i class="fas fa-basketball-ball mr-2"></i> Sports
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly Planner -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-lg shadow-xl p-6 mb-8">
+                <div class="flex justify-between items-center mb-6 flex-wrap gap-4">
+                    <h2 class="text-2xl md:text-3xl font-bold">My Weekly Schedule</h2>
+                    <div class="flex space-x-2">
+                        <button id="clearSchedule" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded transition">
+                            <i class="fas fa-trash mr-2"></i> Clear All
+                        </button>
+                        <button id="saveSchedule" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition">
+                            <i class="fas fa-save mr-2"></i> Save Schedule
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-7 gap-4" id="weeklySchedule">
+                    <!-- Monday -->
+                    <div class="day-column border-2 border-gray-200 rounded-lg p-4" data-day="monday">
+                        <h3 class="font-bold text-lg mb-3 text-center bg-gray-100 py-2 rounded">Monday</h3>
+                        <div class="workout-drop-zone min-h-[200px] space-y-2" data-day="monday">
+                            <p class="text-gray-400 text-center text-sm">Drag workouts here</p>
+                        </div>
+                    </div>
+
+                    <!-- Tuesday -->
+                    <div class="day-column border-2 border-gray-200 rounded-lg p-4" data-day="tuesday">
+                        <h3 class="font-bold text-lg mb-3 text-center bg-gray-100 py-2 rounded">Tuesday</h3>
+                        <div class="workout-drop-zone min-h-[200px] space-y-2" data-day="tuesday">
+                            <p class="text-gray-400 text-center text-sm">Drag workouts here</p>
+                        </div>
+                    </div>
+
+                    <!-- Wednesday -->
+                    <div class="day-column border-2 border-gray-200 rounded-lg p-4" data-day="wednesday">
+                        <h3 class="font-bold text-lg mb-3 text-center bg-gray-100 py-2 rounded">Wednesday</h3>
+                        <div class="workout-drop-zone min-h-[200px] space-y-2" data-day="wednesday">
+                            <p class="text-gray-400 text-center text-sm">Drag workouts here</p>
+                        </div>
+                    </div>
+
+                    <!-- Thursday -->
+                    <div class="day-column border-2 border-gray-200 rounded-lg p-4" data-day="thursday">
+                        <h3 class="font-bold text-lg mb-3 text-center bg-gray-100 py-2 rounded">Thursday</h3>
+                        <div class="workout-drop-zone min-h-[200px] space-y-2" data-day="thursday">
+                            <p class="text-gray-400 text-center text-sm">Drag workouts here</p>
+                        </div>
+                    </div>
+
+                    <!-- Friday -->
+                    <div class="day-column border-2 border-gray-200 rounded-lg p-4" data-day="friday">
+                        <h3 class="font-bold text-lg mb-3 text-center bg-gray-100 py-2 rounded">Friday</h3>
+                        <div class="workout-drop-zone min-h-[200px] space-y-2" data-day="friday">
+                            <p class="text-gray-400 text-center text-sm">Drag workouts here</p>
+                        </div>
+                    </div>
+
+                    <!-- Saturday -->
+                    <div class="day-column border-2 border-gray-200 rounded-lg p-4" data-day="saturday">
+                        <h3 class="font-bold text-lg mb-3 text-center bg-gray-100 py-2 rounded">Saturday</h3>
+                        <div class="workout-drop-zone min-h-[200px] space-y-2" data-day="saturday">
+                            <p class="text-gray-400 text-center text-sm">Drag workouts here</p>
+                        </div>
+                    </div>
+
+                    <!-- Sunday -->
+                    <div class="day-column border-2 border-gray-200 rounded-lg p-4" data-day="sunday">
+                        <h3 class="font-bold text-lg mb-3 text-center bg-gray-100 py-2 rounded">Sunday</h3>
+                        <div class="workout-drop-zone min-h-[200px] space-y-2" data-day="sunday">
+                            <p class="text-gray-400 text-center text-sm">Drag workouts here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Available Workouts -->
+            <div class="bg-white rounded-lg shadow-xl p-6">
+                <h2 class="text-3xl font-bold mb-6">Available Workouts</h2>
+                <div class="grid md:grid-cols-4 gap-4" id="workoutLibrary">
+                    <!-- Strength Workouts -->
+                    <div class="workout-card" draggable="true" data-category="strength" data-workout="chest-day">
+                        <div class="bg-gradient-to-br from-red-500 to-red-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-dumbbell text-2xl mb-2"></i>
+                            <h4 class="font-bold">Chest Day</h4>
+                            <p class="text-sm opacity-90">60 min • Strength</p>
+                        </div>
+                    </div>
+
+                    <div class="workout-card" draggable="true" data-category="strength" data-workout="leg-day">
+                        <div class="bg-gradient-to-br from-red-500 to-red-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-dumbbell text-2xl mb-2"></i>
+                            <h4 class="font-bold">Leg Day</h4>
+                            <p class="text-sm opacity-90">75 min • Strength</p>
+                        </div>
+                    </div>
+
+                    <div class="workout-card" draggable="true" data-category="strength" data-workout="back-shoulders">
+                        <div class="bg-gradient-to-br from-red-500 to-red-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-dumbbell text-2xl mb-2"></i>
+                            <h4 class="font-bold">Back & Shoulders</h4>
+                            <p class="text-sm opacity-90">60 min • Strength</p>
+                        </div>
+                    </div>
+
+                    <div class="workout-card" draggable="true" data-category="strength" data-workout="arms-abs">
+                        <div class="bg-gradient-to-br from-red-500 to-red-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-dumbbell text-2xl mb-2"></i>
+                            <h4 class="font-bold">Arms & Abs</h4>
+                            <p class="text-sm opacity-90">45 min • Strength</p>
+                        </div>
+                    </div>
+
+                    <!-- Cardio Workouts -->
+                    <div class="workout-card" draggable="true" data-category="cardio" data-workout="running">
+                        <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-running text-2xl mb-2"></i>
+                            <h4 class="font-bold">Running</h4>
+                            <p class="text-sm opacity-90">30 min • Cardio</p>
+                        </div>
+                    </div>
+
+                    <div class="workout-card" draggable="true" data-category="cardio" data-workout="hiit">
+                        <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-bolt text-2xl mb-2"></i>
+                            <h4 class="font-bold">HIIT Training</h4>
+                            <p class="text-sm opacity-90">30 min • Cardio</p>
+                        </div>
+                    </div>
+
+                    <div class="workout-card" draggable="true" data-category="cardio" data-workout="cycling">
+                        <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-bicycle text-2xl mb-2"></i>
+                            <h4 class="font-bold">Cycling</h4>
+                            <p class="text-sm opacity-90">45 min • Cardio</p>
+                        </div>
+                    </div>
+
+                    <div class="workout-card" draggable="true" data-category="cardio" data-workout="swimming">
+                        <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-swimmer text-2xl mb-2"></i>
+                            <h4 class="font-bold">Swimming</h4>
+                            <p class="text-sm opacity-90">45 min • Cardio</p>
+                        </div>
+                    </div>
+
+                    <!-- Flexibility Workouts -->
+                    <div class="workout-card" draggable="true" data-category="flexibility" data-workout="yoga">
+                        <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-spa text-2xl mb-2"></i>
+                            <h4 class="font-bold">Yoga</h4>
+                            <p class="text-sm opacity-90">60 min • Flexibility</p>
+                        </div>
+                    </div>
+
+                    <div class="workout-card" draggable="true" data-category="flexibility" data-workout="pilates">
+                        <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-person-yoga text-2xl mb-2"></i>
+                            <h4 class="font-bold">Pilates</h4>
+                            <p class="text-sm opacity-90">45 min • Flexibility</p>
+                        </div>
+                    </div>
+
+                    <div class="workout-card" draggable="true" data-category="flexibility" data-workout="stretching">
+                        <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-hand-sparkles text-2xl mb-2"></i>
+                            <h4 class="font-bold">Stretching</h4>
+                            <p class="text-sm opacity-90">30 min • Flexibility</p>
+                        </div>
+                    </div>
+
+                    <div class="workout-card" draggable="true" data-category="flexibility" data-workout="mobility">
+                        <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-walking text-2xl mb-2"></i>
+                            <h4 class="font-bold">Mobility Work</h4>
+                            <p class="text-sm opacity-90">30 min • Flexibility</p>
+                        </div>
+                    </div>
+
+                    <!-- Sports -->
+                    <div class="workout-card" draggable="true" data-category="sports" data-workout="basketball">
+                        <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-basketball-ball text-2xl mb-2"></i>
+                            <h4 class="font-bold">Basketball</h4>
+                            <p class="text-sm opacity-90">60 min • Sports</p>
+                        </div>
+                    </div>
+
+                    <div class="workout-card" draggable="true" data-category="sports" data-workout="tennis">
+                        <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-table-tennis text-2xl mb-2"></i>
+                            <h4 class="font-bold">Tennis</h4>
+                            <p class="text-sm opacity-90">60 min • Sports</p>
+                        </div>
+                    </div>
+
+                    <div class="workout-card" draggable="true" data-category="sports" data-workout="boxing">
+                        <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-fist-raised text-2xl mb-2"></i>
+                            <h4 class="font-bold">Boxing</h4>
+                            <p class="text-sm opacity-90">45 min • Sports</p>
+                        </div>
+                    </div>
+
+                    <div class="workout-card" draggable="true" data-category="strength" data-workout="rest-day">
+                        <div class="bg-gradient-to-br from-gray-500 to-gray-600 text-white p-4 rounded-lg cursor-move hover:shadow-lg transition">
+                            <i class="fas fa-bed text-2xl mb-2"></i>
+                            <h4 class="font-bold">Rest Day</h4>
+                            <p class="text-sm opacity-90">Recovery</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pre-made Templates -->
+            <div class="bg-white rounded-lg shadow-xl p-6 mt-8">
+                <h2 class="text-3xl font-bold mb-6">Quick Templates</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="border-2 border-gray-200 rounded-lg p-6 hover:border-red-500 transition cursor-pointer" onclick="loadTemplate('beginner')">
+                        <h3 class="font-bold text-xl mb-3">Beginner Routine</h3>
+                        <ul class="text-sm space-y-2 text-gray-600">
+                            <li>• 3 workout days per week</li>
+                            <li>• Full body focus</li>
+                            <li>• 45 min sessions</li>
+                        </ul>
+                        <button class="mt-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded w-full">Load Template</button>
+                    </div>
+
+                    <div class="border-2 border-gray-200 rounded-lg p-6 hover:border-red-500 transition cursor-pointer" onclick="loadTemplate('intermediate')">
+                        <h3 class="font-bold text-xl mb-3">Intermediate Routine</h3>
+                        <ul class="text-sm space-y-2 text-gray-600">
+                            <li>• 4-5 workout days per week</li>
+                            <li>• Split training</li>
+                            <li>• 60 min sessions</li>
+                        </ul>
+                        <button class="mt-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded w-full">Load Template</button>
+                    </div>
+
+                    <div class="border-2 border-gray-200 rounded-lg p-6 hover:border-red-500 transition cursor-pointer" onclick="loadTemplate('advanced')">
+                        <h3 class="font-bold text-xl mb-3">Advanced Routine</h3>
+                        <ul class="text-sm space-y-2 text-gray-600">
+                            <li>• 6 workout days per week</li>
+                            <li>• Advanced split</li>
+                            <li>• 75 min sessions</li>
+                        </ul>
+                        <button class="mt-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded w-full">Load Template</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2026 FitZone Gym. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        .workout-category {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background-color: #e5e7eb;
+            color: #374151;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .workout-category:hover {
+            background-color: #d1d5db;
+        }
+        .workout-category.active {
+            background-color: #ef4444;
+            color: white;
+        }
+        .workout-drop-zone {
+            min-height: 200px;
+            transition: all 0.3s;
+        }
+        .workout-drop-zone.drag-over {
+            background-color: #fee2e2;
+            border: 2px dashed #ef4444;
+        }
+        .scheduled-workout {
+            background: linear-gradient(to right, #ef4444, #dc2626);
+            color: white;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: move;
+            position: relative;
+        }
+        .scheduled-workout .remove-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    </style>
+
+    <script src="js/workout-planner.js"></script>
+</body>
+</html>
