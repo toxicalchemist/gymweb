@@ -73,7 +73,7 @@ function handleLogin(e) {
             loginTime: new Date().toISOString()
         };
         
-        saveToLocalStorage('fitzone_user', user);
+        saveToLocalStorage('primeopus_user', user);
         showNotification('Login successful! Redirecting...', 'success');
         
         setTimeout(() => {

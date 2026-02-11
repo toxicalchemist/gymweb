@@ -211,9 +211,9 @@ function processPayment(email) {
         };
         
         // Save to localStorage
-        let payments = getFromLocalStorage('fitzone_payments') || [];
+        let payments = getFromLocalStorage('primeopus_payments') || [];
         payments.push(payment);
-        saveToLocalStorage('fitzone_payments', payment);
+        saveToLocalStorage('primeopus_payments', payment);
         
         // Show success modal
         document.getElementById('confirmEmail').textContent = email;

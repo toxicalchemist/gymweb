@@ -99,9 +99,9 @@ function handleBooking(e) {
     };
     
     // Save booking (in real app, this would be an API call)
-    let bookings = getFromLocalStorage('fitzone_bookings') || [];
+    let bookings = getFromLocalStorage('primeopus_bookings') || [];
     bookings.push(booking);
-    saveToLocalStorage('fitzone_bookings', bookings);
+    saveToLocalStorage('primeopus_bookings', bookings);
     
     // Show success message
     showNotification('Session booked successfully!', 'success');
