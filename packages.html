@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Packages - FitZone Gym Philippines</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-gray-900 text-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i class="fas fa-dumbbell text-red-500 text-2xl"></i>
+                    <span class="text-2xl font-bold">FitZone</span>
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-red-500 transition">Home</a>
+                    <a href="packages.html" class="text-red-500">Packages</a>
+                    <a href="workout-planner.html" class="hover:text-red-500 transition">Workout Planner</a>
+                    <a href="instructors.html" class="hover:text-red-500 transition">Instructors</a>
+                    <a href="payment.html" class="hover:text-red-500 transition">Payment</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="login.html" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded transition">Login</a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-br from-gray-900 to-red-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Choose Your Perfect Plan</h1>
+            <p class="text-lg md:text-xl text-gray-300">Flexible membership options to fit your lifestyle and goals</p>
+        </div>
+    </section>
+
+    <!-- Package Filter -->
+    <section class="py-8 bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="package-filter active px-6 py-2 rounded-full bg-red-500 text-white hover:bg-red-600 transition" data-filter="all">
+                    All Plans
+                </button>
+                <button class="package-filter px-6 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition" data-filter="monthly">
+                    Monthly
+                </button>
+                <button class="package-filter px-6 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition" data-filter="quarterly">
+                    Quarterly
+                </button>
+                <button class="package-filter px-6 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition" data-filter="annual">
+                    Annual
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Basic Package -->
+                <div class="package-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2" data-category="monthly">
+                    <div class="bg-gray-100 p-6 text-center">
+                        <h3 class="text-2xl font-bold mb-2">Basic</h3>
+                        <div class="text-4xl font-bold text-gray-900 mb-2">₱1,499<span class="text-lg text-gray-600">/mo</span></div>
+                        <p class="text-gray-600">Perfect for beginners</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Access to gym facilities</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Cardio equipment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Locker room access</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Free Wi-Fi</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-gray-300 mr-3 mt-1"></i>
+                                <span class="text-gray-400">Group classes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-gray-300 mr-3 mt-1"></i>
+                                <span class="text-gray-400">Personal trainer</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 rounded-lg transition" onclick="selectPackage('Basic', 1499)">
+                            Select Plan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Standard Package -->
+                <div class="package-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2 border-4 border-red-500" data-category="monthly">
+                    <div class="bg-red-500 text-white p-6 text-center relative">
+                        <div class="absolute top-0 right-0 bg-yellow-400 text-gray-900 px-3 py-1 text-xs font-bold">POPULAR</div>
+                        <h3 class="text-2xl font-bold mb-2">Standard</h3>
+                        <div class="text-4xl font-bold mb-2">₱2,499<span class="text-lg">/mo</span></div>
+                        <p>Most popular choice</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Everything in Basic</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>All group classes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Weight training area</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Nutrition consultation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Progress tracking app</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-gray-300 mr-3 mt-1"></i>
+                                <span class="text-gray-400">Personal trainer</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg transition" onclick="selectPackage('Standard', 2499)">
+                            Select Plan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="package-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2" data-category="monthly">
+                    <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white p-6 text-center">
+                        <h3 class="text-2xl font-bold mb-2">Premium</h3>
+                        <div class="text-4xl font-bold mb-2">₱3,999<span class="text-lg">/mo</span></div>
+                        <p>Ultimate fitness experience</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Everything in Standard</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>2 personal training sessions/week</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Spa & sauna access</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Custom meal plans</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Guest passes (2/month)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Priority booking</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 rounded-lg transition" onclick="selectPackage('Premium', 3999)">
+                            Select Plan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quarterly Basic -->
+                <div class="package-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2" data-category="quarterly">
+                    <div class="bg-blue-500 text-white p-6 text-center">
+                        <div class="absolute top-2 right-2 bg-green-400 text-gray-900 px-2 py-1 text-xs font-bold rounded">SAVE 10%</div>
+                        <h3 class="text-2xl font-bold mb-2">Quarterly Basic</h3>
+                        <div class="text-4xl font-bold mb-2">₱4,050<span class="text-lg">/3mo</span></div>
+                        <p class="text-sm">₱1,350/month (save ₱447)</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>All Basic features</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>3-month commitment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>10% discount</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Free fitness assessment</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition" onclick="selectPackage('Quarterly Basic', 4050)">
+                            Select Plan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quarterly Standard -->
+                <div class="package-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2" data-category="quarterly">
+                    <div class="bg-blue-600 text-white p-6 text-center">
+                        <div class="absolute top-2 right-2 bg-green-400 text-gray-900 px-2 py-1 text-xs font-bold rounded">SAVE 15%</div>
+                        <h3 class="text-2xl font-bold mb-2">Quarterly Standard</h3>
+                        <div class="text-4xl font-bold mb-2">₱6,375<span class="text-lg">/3mo</span></div>
+                        <p class="text-sm">₱2,125/month (save ₱1,122)</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>All Standard features</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>3-month commitment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>15% discount</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>1 free personal training session</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition" onclick="selectPackage('Quarterly Standard', 6375)">
+                            Select Plan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Annual Premium -->
+                <div class="package-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2 border-4 border-green-500" data-category="annual">
+                    <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 text-center">
+                        <div class="absolute top-2 right-2 bg-yellow-400 text-gray-900 px-2 py-1 text-xs font-bold rounded">BEST VALUE</div>
+                        <h3 class="text-2xl font-bold mb-2">Annual Premium</h3>
+                        <div class="text-4xl font-bold mb-2">₱38,390<span class="text-lg">/year</span></div>
+                        <p class="text-sm">₱3,199/month (save ₱9,598)</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>All Premium features</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Annual commitment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>20% discount</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Free gym merchandise</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <span>Exclusive workshops access</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition" onclick="selectPackage('Annual Premium', 38390)">
+                            Select Plan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-Ons Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Available Add-Ons</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <i class="fas fa-user-tie text-red-500 text-4xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Personal Training</h3>
+                    <p class="text-gray-600 mb-4">₱2,000/session</p>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition">Add</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <i class="fas fa-utensils text-red-500 text-4xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Nutrition Plan</h3>
+                    <p class="text-gray-600 mb-4">₱1,299/month</p>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition">Add</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <i class="fas fa-spa text-red-500 text-4xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Massage Therapy</h3>
+                    <p class="text-gray-600 mb-4">₱3,000/session</p>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition">Add</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <i class="fas fa-tshirt text-red-500 text-4xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Locker Rental</h3>
+                    <p class="text-gray-600 mb-4">₱500/month</p>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition">Add</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="font-bold text-lg mb-2">Can I cancel my membership?</h3>
+                    <p class="text-gray-600">Yes, you can cancel anytime with 30 days notice for monthly plans. Quarterly and annual plans have commitment periods.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="font-bold text-lg mb-2">Can I freeze my membership?</h3>
+                    <p class="text-gray-600">Yes, you can freeze your membership for up to 3 months per year for a small administrative fee.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="font-bold text-lg mb-2">Do you offer student discounts?</h3>
+                    <p class="text-gray-600">Yes! Students get 15% off all plans with a valid student ID.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="font-bold text-lg mb-2">Can I upgrade or downgrade my plan?</h3>
+                    <p class="text-gray-600">Absolutely! You can change your plan at any time. Upgrades are immediate, downgrades take effect at the next billing cycle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2026 FitZone Gym. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/packages.js"></script>
+</body>
+</html>

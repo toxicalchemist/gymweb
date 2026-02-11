@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Instructors - FitZone Gym</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-gray-900 text-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i class="fas fa-dumbbell text-red-500 text-2xl"></i>
+                    <span class="text-2xl font-bold">FitZone</span>
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-red-500 transition">Home</a>
+                    <a href="packages.html" class="hover:text-red-500 transition">Packages</a>
+                    <a href="workout-planner.html" class="hover:text-red-500 transition">Workout Planner</a>
+                    <a href="instructors.html" class="text-red-500">Instructors</a>
+                    <a href="payment.html" class="hover:text-red-500 transition">Payment</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="login.html" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded transition">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-br from-gray-900 to-red-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Meet Our Expert Trainers</h1>
+            <p class="text-lg md:text-xl text-gray-300">Certified professionals dedicated to your fitness success</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-8 bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="instructor-filter active px-6 py-2 rounded-full bg-red-500 text-white hover:bg-red-600 transition" data-filter="all">
+                    All Trainers
+                </button>
+                <button class="instructor-filter px-6 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition" data-filter="strength">
+                    Strength Training
+                </button>
+                <button class="instructor-filter px-6 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition" data-filter="cardio">
+                    Cardio Specialist
+                </button>
+                <button class="instructor-filter px-6 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition" data-filter="yoga">
+                    Yoga & Pilates
+                </button>
+                <button class="instructor-filter px-6 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition" data-filter="nutrition">
+                    Nutrition Expert
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructors Grid -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8" id="instructorsGrid">
+                <!-- Instructor 1 -->
+                <div class="instructor-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition" data-specialty="strength">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=500&fit=crop" alt="Mike Johnson" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-star mr-1"></i> 4.9
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Miguel Santos</h3>
+                        <p class="text-red-500 font-semibold mb-3">Strength Training Specialist</p>
+                        <p class="text-gray-600 mb-4">10+ years of experience in bodybuilding and strength conditioning. Former competitive powerlifter from Manila.</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Certifications:</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> NSCA-CPT</li>
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> Strength & Conditioning</li>
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> Sports Nutrition</li>
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Specialties:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Weight Training</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Powerlifting</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Muscle Gain</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg transition" onclick="bookInstructor('Miguel Santos')">
+                            <i class="fas fa-calendar-check mr-2"></i> Book Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Instructor 2 -->
+                <div class="instructor-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition" data-specialty="cardio">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&h=500&fit=crop" alt="Sarah Martinez" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-star mr-1"></i> 5.0
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Sarah Reyes</h3>
+                        <p class="text-red-500 font-semibold mb-3">Cardio & HIIT Expert</p>
+                        <p class="text-gray-600 mb-4">Marathon runner and certified HIIT instructor. Specializes in high-energy training sessions.</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Certifications:</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> ACE Certified</li>
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> HIIT Specialist</li>
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> Running Coach</li>
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Specialties:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">HIIT</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Running</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Weight Loss</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg transition" onclick="bookInstructor('Sarah Reyes')">
+                            <i class="fas fa-calendar-check mr-2"></i> Book Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Instructor 3 -->
+                <div class="instructor-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition" data-specialty="yoga">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=500&fit=crop" alt="Emma Wilson" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-star mr-1"></i> 4.8
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Emma Garcia</h3>
+                        <p class="text-red-500 font-semibold mb-3">Yoga & Pilates Instructor</p>
+                        <p class="text-gray-600 mb-4">Certified yoga instructor with 8 years of experience. Specializes in mind-body connection.</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Certifications:</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> RYT 500</li>
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> Pilates Certified</li>
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> Meditation Guide</li>
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Specialties:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Yoga</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Pilates</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Flexibility</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg transition" onclick="bookInstructor('Emma Garcia')">
+                            <i class="fas fa-calendar-check mr-2"></i> Book Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Instructor 4 -->
+                <div class="instructor-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition" data-specialty="strength">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?w=400&h=500&fit=crop" alt="David Chen" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-star mr-1"></i> 4.9
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">David Cruz</h3>
+                        <p class="text-red-500 font-semibold mb-3">CrossFit & Functional Training</p>
+                        <p class="text-gray-600 mb-4">CrossFit Level 3 trainer with expertise in functional movements and athletic performance.</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Certifications:</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> CrossFit L3</li>
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> Olympic Lifting</li>
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> Mobility Coach</li>
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Specialties:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">CrossFit</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Functional Training</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Olympic Lifting</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg transition" onclick="bookInstructor('David Cruz')">
+                            <i class="fas fa-calendar-check mr-2"></i> Book Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Instructor 5 -->
+                <div class="instructor-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition" data-specialty="nutrition">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop" alt="Dr. Lisa Brown" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-star mr-1"></i> 5.0
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Dr. Lisa Mendoza</h3>
+                        <p class="text-red-500 font-semibold mb-3">Sports Nutritionist</p>
+                        <p class="text-gray-600 mb-4">PhD in Sports Nutrition. Specializes in meal planning and dietary optimization for athletes.</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Certifications:</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> PhD Sports Nutrition</li>
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> Registered Dietitian</li>
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> CISSN</li>
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Specialties:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Meal Planning</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Weight Management</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Sports Nutrition</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg transition" onclick="bookInstructor('Dr. Lisa Mendoza')">
+                            <i class="fas fa-calendar-check mr-2"></i> Book Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Instructor 6 -->
+                <div class="instructor-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition" data-specialty="cardio">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&h=500&fit=crop" alt="Alex Rodriguez" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-star mr-1"></i> 4.7
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Alex Bautista</h3>
+                        <p class="text-red-500 font-semibold mb-3">Boxing & Combat Sports</p>
+                        <p class="text-gray-600 mb-4">Former professional boxer with 15 years of fighting and coaching experience.</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Certifications:</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> Boxing Coach</li>
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> Kickboxing Instructor</li>
+                                <li><i class="fas fa-certificate text-red-500 mr-2"></i> Self-Defense</li>
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Specialties:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Boxing</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Kickboxing</span>
+                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Conditioning</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg transition" onclick="bookInstructor('Alex Bautista')">
+                            <i class="fas fa-calendar-check mr-2"></i> Book Session
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">Book a Session</h2>
+                <button onclick="closeBookingModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <form id="bookingForm">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Instructor</label>
+                    <input type="text" id="instructorName" readonly class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-50">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Select Date</label>
+                    <input type="date" id="sessionDate" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Select Time</label>
+                    <select id="sessionTime" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        <option value="">Choose a time</option>
+                        <option value="06:00">06:00 AM</option>
+                        <option value="07:00">07:00 AM</option>
+                        <option value="08:00">08:00 AM</option>
+                        <option value="09:00">09:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="14:00">02:00 PM</option>
+                        <option value="15:00">03:00 PM</option>
+                        <option value="16:00">04:00 PM</option>
+                        <option value="17:00">05:00 PM</option>
+                        <option value="18:00">06:00 PM</option>
+                        <option value="19:00">07:00 PM</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Session Type</label>
+                    <select id="sessionType" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        <option value="">Choose session type</option>
+                        <option value="personal">Personal Training (60 min) - ₱2,000</option>
+                        <option value="consultation">Consultation (30 min) - ₱1,299</option>
+                        <option value="group">Group Session (60 min) - ₱999</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Additional Notes</label>
+                    <textarea id="sessionNotes" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Any specific goals or requirements?"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg transition">
+                    Confirm Booking
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2026 FitZone Gym. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/instructors.js"></script>
+</body>
+</html>
